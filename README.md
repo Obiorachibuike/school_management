@@ -97,6 +97,10 @@ Here’s the entire content converted to clean Markdown format with emoji icons 
 
 
 ---
+Here's the improved and properly indented version of your Markdown documentation with emoji icons:
+
+
+---
 
 # School Management API Documentation
 
@@ -106,31 +110,45 @@ Here’s the entire content converted to clean Markdown format with emoji icons 
 
 Create a `.env` file in your project root and add:
 
-DB_HOST=localhost DB_USER=root DB_PASSWORD=your_mysql_password DB_NAME=school_management PORT=5000
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=school_management
+PORT=5000
 
-### 📘 Variable Descriptions
+📘 Variable Descriptions
 
-- 🏠 **DB_HOST**: Your MySQL host (usually `localhost`)
-- 👤 **DB_USER**: MySQL username (default: `root`)
-- 🔒 **DB_PASSWORD**: Your MySQL password
-- 🗃️ **DB_NAME**: Database name (default: `school_management`)
-- 🚪 **PORT**: Port your server will run on (default: `5000`)
+🏠 DB_HOST: Your MySQL host (usually localhost)
+
+👤 DB_USER: MySQL username (default: root)
+
+🔒 DB_PASSWORD: Your MySQL password
+
+🗃️ DB_NAME: Database name (default: school_management)
+
+🚪 PORT: Port your server will run on (default: 5000)
+
+
 
 ---
 
-## 🚦 API Endpoints
+🚦 API Endpoints
+
 
 ---
 
-### ➕ Add School
+➕ Add School
 
-- **Method**: `POST`
-- **URL**: `/addSchool`
-- **Description**: Adds a new school to the database.
+Method: POST
 
-#### 📨 Request Body
+URL: /addSchool
 
-```json
+Description: Adds a new school to the database.
+
+
+📨 Request Body
+
 {
   "name": "School Name",
   "address": "School Address",
@@ -158,12 +176,17 @@ DB_HOST=localhost DB_USER=root DB_PASSWORD=your_mysql_password DB_NAME=school_ma
 
 Method: GET
 
-Endpoint: /listSchools
+URL: /listSchools?latitude=LAT&longitude=LON
 
-Description: Returns a list of schools sorted by distance to the given coordinates.
+Description: Returns schools sorted by distance to the given coordinates.
 
 
 🧭 Query Parameters
+
+📌 latitude — User's latitude
+
+📌 longitude — User's longitude
+
 
 🔍 Example Request
 
@@ -187,18 +210,18 @@ GET /listSchools?latitude=12.34567&longitude=98.76543
 
 ▶️ Running the Server
 
-Once .env is set up, start your server with:
+Once .env is set up, start the server using:
 
 npm start
 
-The server will run on the specified port (5000 by default). You can use Postman, CURL, or any API tool to test the endpoints.
+The server will run on the port you specified (5000 by default). Use Postman, CURL, or any API testing tool.
 
 
 ---
 
 🧪 Testing with Postman
 
-You can manually create these routes or import them into Postman.
+You can manually create the routes or import them into Postman:
 
 ➕ Add School
 
@@ -226,7 +249,7 @@ Method: GET
 URL: http://localhost:5000/listSchools?latitude=40.7128&longitude=-74.0060
 
 
-Response will be a JSON array of schools sorted by distance.
+The response will be a JSON array of schools sorted by distance.
 
 
 ---
@@ -235,7 +258,7 @@ Response will be a JSON array of schools sorted by distance.
 
 Want to help improve this project?
 
-1. 🍴 Fork the repo
+1. 🍴 Fork the repository
 
 
 2. 🌿 Create a new branch
@@ -253,7 +276,7 @@ Want to help improve this project?
 
 📌 Summary
 
-The ToC links use heading text converted to lowercase with dashes instead of spaces.
+TOC links use lowercase headings with hyphens instead of spaces.
 
 Compatible with GitHub and most Markdown parsers.
 
@@ -261,9 +284,9 @@ Compatible with GitHub and most Markdown parsers.
 
 ---
 
-> Let me know if you'd like this packaged as a .md file for download.
+> Let me know if you'd like me to generate a .md file you can download.
 
 
 
-Your image will be ready soon and complements the documentation. Let me know if you want the Markdown saved and shared as a downloadable file.
+Would you like me to generate and upload this as a ready-to-use `.md` file for GitHub or documentation sites?
 
