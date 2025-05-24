@@ -30,6 +30,8 @@ app.use('/', schoolRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
+console.log('DB_HOST:', process.env.DB_HOST);
+console.log('DB_PORT:', process.env.DB_PORT);
 const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
