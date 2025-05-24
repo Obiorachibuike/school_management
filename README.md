@@ -81,6 +81,16 @@ Create a .env file in your project root and add:
 - DB_NAME=school_management
 - PORT=5000
 
+## 🔧 Environment Variables
+
+Create a `.env` file in your project root and add:
+
+```env
+DB_HOST=localhost  
+DB_USER=root  
+DB_PASSWORD=your_mysql_password  
+DB_NAME=school_management  
+PORT=5000
 
    ### Variable Descriptions
 
