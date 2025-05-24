@@ -2,6 +2,10 @@ const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 require('dotenv').config();  // To use environment variables
+const createSchoolsTable = require('./createTable.js'); // import function
+
+
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -22,6 +26,11 @@ db.connect(err => {
   }
   console.log('Connected to MySQL database');
 });
+
+
+createSchoolsTable();
+
+
 
 // Add School API (POST /addSchool)
 app.post('/addSchool', (req, res) => {
