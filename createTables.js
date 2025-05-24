@@ -6,11 +6,13 @@ async function createSchoolsTable() {
       CREATE TABLE IF NOT EXISTS schools (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
-        location VARCHAR(255),
+        address VARCHAR(255),
+        latitude DOUBLE,
+        longitude DOUBLE,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
     `;
-    await db.query(query); // no callback here!
+    await db.query(query);
     console.log('Schools table ensured');
   } catch (error) {
     console.error('Error creating schools table:', error);
