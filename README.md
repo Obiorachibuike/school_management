@@ -81,6 +81,15 @@ Create a .env file in your project root and add:
 -DB_NAME=school_management
 -PORT=5000
 
+
+   ### Variable Descriptions
+
+- 🏠 **DB_HOST**: Your MySQL host (usually `localhost`)
+- 👤 **DB_USER**: MySQL username (default: `root`)
+- 🔒 **DB_PASSWORD**: Your MySQL password
+- 🗃️ **DB_NAME**: Database name (default: `school_management`)
+- 🚪 **PORT**: Port your server will run on (default: `5000`)
+
 🏠 DB_HOST: Your MySQL host (usually localhost)
 
 👤 DB_USER: MySQL username (default: root)
