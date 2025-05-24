@@ -14,8 +14,16 @@ app.get('/', (req, res) => {
   res.send('School API is running');
 });
 
-// Ensure schools table exists
-createSchoolsTable();
+// Ensure schools table exists (now async)
+(async () => {
+  try {
+    await createSchoolsTable();
+    console.log('Schools table checked/created');
+  } catch (err) {
+    console.error('Error creating schools table:', err);
+    process.exit(1);
+  }
+})();
 
 // Routes
 app.use('/', schoolRoutes);
@@ -27,17 +35,17 @@ const server = app.listen(PORT, () => {
 });
 
 // Graceful shutdown
-process.on('SIGINT', () => {
+process.on('SIGINT', async () => {
   console.log('\nGracefully shutting down...');
-  db.end(err => {
-    if (err) {
-      console.error('Error closing DB connection:', err);
-      process.exit(1);
-    }
-    console.log('DB connection closed');
+  try {
+    await db.end();
+    console.log('DB pool closed');
     server.close(() => {
       console.log('Server closed');
       process.exit(0);
     });
-  });
+  } catch (err) {
+    console.error('Error closing DB pool:', err);
+    process.exit(1);
+  }
 });
