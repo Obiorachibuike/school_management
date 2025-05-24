@@ -38,6 +38,8 @@ This is a simple Express.js-based API for managing schools using MySQL as the da
 
 2. Install dependencies:
 
+   ```bash
+
 npm install
 
 
