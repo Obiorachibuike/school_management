@@ -110,7 +110,7 @@ Here's the improved and properly indented version of your Markdown documentation
 
 Create a `.env` file in your project root and add:
 
-       ```env
+      ```env
          DB_HOST=localhost
          DB_USER=root
          DB_PASSWORD=your_mysql_password
