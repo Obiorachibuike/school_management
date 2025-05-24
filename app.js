@@ -1,4 +1,3 @@
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const createSchoolsTable = require('./createTables.js');
@@ -27,22 +26,18 @@ const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-
-
-
+// Graceful shutdown
 process.on('SIGINT', () => {
   console.log('\nGracefully shutting down...');
-  db.end()
-    .then(() => {
-      console.log('DB pool closed');
-      server.close(() => {
-        console.log('Server closed');
-        process.exit(0);
-      });
-    })
-    .catch(err => {
-      console.error('Error closing DB pool:', err);
+  db.end(err => {
+    if (err) {
+      console.error('Error closing DB connection:', err);
       process.exit(1);
+    }
+    console.log('DB connection closed');
+    server.close(() => {
+      console.log('Server closed');
+      process.exit(0);
     });
-});
+  });
 });
