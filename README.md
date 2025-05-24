@@ -201,3 +201,201 @@ If you'd like to contribute to this project, feel free to fork the repository, c
 
 If you want me to add a license section or anything else, just ask!
 
+
+Sure! Here's your README formatted clearly and professionally:
+
+
+---
+
+School Management API
+
+Installation
+
+npm install
+
+Database Setup
+
+1. Set up a MySQL database named school_management (or modify the .env file for a different database name).
+
+
+2. Create the required schools table in your MySQL database using the following SQL query:
+
+
+
+CREATE TABLE schools (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  address VARCHAR(255),
+  latitude FLOAT,
+  longitude FLOAT
+);
+
+Environment Variables
+
+Create a .env file in the root of the project with the following variables:
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=school_management
+PORT=5000
+
+DB_HOST: The host of the MySQL database (usually localhost for local development).
+
+DB_USER: The MySQL username (default is root in XAMPP).
+
+DB_PASSWORD: The password for the MySQL user.
+
+DB_NAME: The name of your MySQL database (e.g., school_management).
+
+PORT: The port the Express server will listen on (default is 5000).
+
+
+API Endpoints
+
+Add School
+
+Endpoint: POST /addSchool
+
+Description: Adds a new school to the database.
+
+
+Request Body:
+
+{
+  "name": "School Name",
+  "address": "School Address",
+  "latitude": 12.34567,
+  "longitude": 98.76543
+}
+
+Responses:
+
+Success:
+
+
+{
+  "message": "School added successfully",
+  "id": 1
+}
+
+Error (missing fields):
+
+
+{
+  "message": "All fields are required."
+}
+
+
+---
+
+List Schools
+
+Endpoint: GET /listSchools
+
+Description: Retrieves a list of schools sorted by proximity to the user's location.
+
+
+Query Parameters:
+
+latitude - User's latitude
+
+longitude - User's longitude
+
+
+Example Request:
+
+GET /listSchools?latitude=12.34567&longitude=98.76543
+
+Response:
+
+[
+  {
+    "id": 1,
+    "name": "School Name",
+    "address": "School Address",
+    "latitude": 12.34567,
+    "longitude": 98.76543,
+    "distance": 0.0
+  }
+]
+
+
+---
+
+Running the Server
+
+After setting up your .env file, start the server by running:
+
+npm start
+
+The server will listen on the port defined in your .env file (default is 5000).
+
+You can test the API endpoints using tools like Postman or CURL.
+
+
+---
+
+Postman Routes
+
+You can import or manually create these routes in Postman:
+
+Add School
+
+Method: POST
+
+URL: http://localhost:5000/addSchool
+
+Body: (raw JSON)
+
+
+{
+  "name": "Central High School",
+  "address": "123 Main St",
+  "latitude": 40.7128,
+  "longitude": -74.0060
+}
+
+Expected Response:
+
+
+{
+  "message": "School added successfully",
+  "id": 1
+}
+
+
+---
+
+List Schools
+
+Method: GET
+
+URL: http://localhost:5000/listSchools?latitude=40.7128&longitude=-74.0060
+
+Expected Response: JSON array of schools sorted by distance.
+
+
+
+---
+
+Contributing
+
+If you'd like to contribute to this project, feel free to:
+
+1. Fork the repository.
+
+
+2. Create a new branch.
+
+
+3. Submit a pull request.
+
+
+
+
+---
+
+If you want me to add a license section or any other info, just let me know!
+
+
