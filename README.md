@@ -75,11 +75,11 @@ Got it! Here’s the raw Markdown content for your README section:
 
 Create a .env file in your project root and add:
 
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_mysql_password
-DB_NAME=school_management
-PORT=5000
+-DB_HOST=localhost
+-DB_USER=root
+-DB_PASSWORD=your_mysql_password
+-DB_NAME=school_management
+-PORT=5000
 
 🏠 DB_HOST: Your MySQL host (usually localhost)
 
@@ -94,7 +94,6 @@ PORT=5000
 
 
 ---
----
 
 ## 🚦 API Endpoints
 
@@ -106,28 +105,28 @@ PORT=5000
 
 **Request Body**:
 
-```json
-{
-  "name": "School Name",
-  "address": "School Address",
-  "latitude": 12.34567,
-  "longitude": 98.76543
-}
+    ```json
+    {
+     "name": "School Name",
+     "address": "School Address",
+     "latitude": 12.34567,
+     "longitude": 98.76543
+     }
 
 
-✅ Success Response:
-```json
-{
-  "message": "School added successfully",
-  "id": 1
-}
+**✅ Success Response:**
+     ```json
+     {
+      "message": "School added successfully",
+      "id": 1
+     }
 
-❌ Error Response (missing fields):
-```json
+**❌ Error Response (missing fields):**
+     ```json
 
-{
-  "message": "All fields are required."
-}
+     {
+      "message": "All fields are required."
+     }
 
 
 ---
