@@ -75,11 +75,11 @@ Got it! Here’s the raw Markdown content for your README section:
 
 Create a .env file in your project root and add:
 
--DB_HOST=localhost
--DB_USER=root
--DB_PASSWORD=your_mysql_password
--DB_NAME=school_management
--PORT=5000
+- DB_HOST=localhost
+- DB_USER=root
+- DB_PASSWORD=your_mysql_password
+- DB_NAME=school_management
+- PORT=5000
 
 
    ### Variable Descriptions
