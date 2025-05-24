@@ -42,12 +42,14 @@ This is a simple Express.js-based API for managing schools using MySQL as the da
 
 ## 📦 Installation
 1. Clone the repository:
+   <button onclick="copyToClipboard('git clone <repository_url>\ncd <project_directory>')">Copy</button>
    ```bash
    git clone <repository_url>
    cd <project_directory>
    ```
 
 2. Install dependencies:
+   <button onclick="copyToClipboard('npm install')">Copy</button>
    ```bash
    npm install
    ```
@@ -55,6 +57,7 @@ This is a simple Express.js-based API for managing schools using MySQL as the da
 3. Set up a MySQL database named `school_management` (or modify the `.env` file for a different database name).
 
 4. Create the required `schools` table in your MySQL database using the following query:
+   <button onclick="copyToClipboard('CREATE TABLE schools (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(255),\n  address VARCHAR(255),\n  latitude FLOAT,\n  longitude FLOAT\n);')">Copy</button>
    ```sql
    CREATE TABLE schools (
      id INT AUTO_INCREMENT PRIMARY KEY,
@@ -70,6 +73,7 @@ This is a simple Express.js-based API for managing schools using MySQL as the da
 ## 🔧 Environment Variables
 Create a `.env` file in the root of the project with the following variables:
 
+<button onclick="copyToClipboard('DB_HOST=localhost\nDB_USER=root\nDB_PASSWORD=your_mysql_password\nDB_NAME=school_management\nPORT=5000')">Copy</button>
 ```
 DB_HOST=localhost
 DB_USER=root
@@ -92,17 +96,19 @@ PORT=5000
 - **Endpoint**: `POST /addSchool`
 - **Description**: Adds a new school to the database.
 - **Request Body**:
-  ```json
-  {
-    "name": "School Name",
-    "address": "School Address",
-    "latitude": 12.34567,
-    "longitude": 98.76543
-  }
-  ```
+   <button onclick="copyToClipboard('{ \"name\": \"School Name\", \"address\": \"School Address\", \"latitude\": 12.34567, \"longitude\": 98.76543 }')">Copy</button>
+   ```json
+   {
+     "name": "School Name",
+     "address": "School Address",
+     "latitude": 12.34567,
+     "longitude": 98.76543
+   }
+   ```
 
 - **Response**:
   - ✅ **Success**:
+    <button onclick="copyToClipboard('{ \"message\": \"School added successfully\", \"id\": 1 }')">Copy</button>
     ```json
     {
       "message": "School added successfully",
@@ -111,6 +117,7 @@ PORT=5000
     ```
 
   - ❌ **Error** (if required fields are missing):
+    <button onclick="copyToClipboard('{ \"message\": \"All fields are required.\" }')">Copy</button>
     ```json
     {
       "message": "All fields are required."
@@ -127,23 +134,25 @@ PORT=5000
   - `longitude`: The user's longitude.
 
 - **Example Request**: 
-  ```
-  GET /listSchools?latitude=12.34567&longitude=98.76543
-  ```
+   <button onclick="copyToClipboard('GET /listSchools?latitude=12.34567&longitude=98.76543')">Copy</button>
+   ```
+   GET /listSchools?latitude=12.34567&longitude=98.76543
+   ```
 
 - **Response**:
-  ```json
-  [
-    {
-      "id": 1,
-      "name": "School Name",
-      "address": "School Address",
-      "latitude": 12.34567,
-      "longitude": 98.76543,
-      "distance": 0.0
-    }
-  ]
-  ```
+   <button onclick="copyToClipboard('[ { \"id\": 1, \"name\": \"School Name\", \"address\": \"School Address\", \"latitude\": 12.34567, \"longitude\": 98.76543, \"distance\": 0.0 } ]')">Copy</button>
+   ```json
+   [
+     {
+       "id": 1,
+       "name": "School Name",
+       "address": "School Address",
+       "latitude": 12.34567,
+       "longitude": 98.76543,
+       "distance": 0.0
+     }
+   ]
+   ```
 
 The list of schools is sorted by the distance from the provided latitude and longitude.
 
@@ -151,6 +160,7 @@ The list of schools is sorted by the distance from the provided latitude and lon
 
 ## ▶️ Running the Server
 1. After setting up the environment variables, start the server by running:
+   <button onclick="copyToClipboard('npm start')">Copy</button>
    ```bash
    npm start
    ```
@@ -168,22 +178,24 @@ You can import these routes into Postman or create them manually.
 - **Method**: `POST`
 - **URL**: `http://localhost:5000/addSchool`
 - **Body**: (raw JSON)
-  ```json
-  {
-    "name": "Central High School",
-    "address": "123 Main St",
-    "latitude": 40.7128,
-    "longitude": -74.0060
-  }
-  ```
+   <button onclick="copyToClipboard('{ \"name\": \"Central High School\", \"address\": \"123 Main St\", \"latitude\": 40.7128, \"longitude\": -74.0060 }')">Copy</button>
+   ```json
+   {
+     "name": "Central High School",
+     "address": "123 Main St",
+     "latitude": 40.7128,
+     "longitude": -74.0060
+   }
+   ```
 
 - **Expected Response**:
-  ```json
-  {
-    "message": "School added successfully",
-    "id": 1
-  }
-  ```
+   <button onclick="copyToClipboard('{ \"message\": \"School added successfully\", \"id\": 1 }')">Copy</button>
+   ```json
+   {
+     "message": "School added successfully",
+     "id": 1
+   }
+   ```
 
 ---
 
@@ -192,26 +204,27 @@ You can import these routes into Postman or create them manually.
 - **URL**: `http://localhost:5000/listSchools?latitude=40.7128&longitude=-74.0060`
 
 - **Expected Response**:
-  ```json
-  [
-    {
-      "id": 1,
-      "name": "Central High School",
-      "address": "123 Main St",
-      "latitude": 40.7128,
-      "longitude": -74.0060,
-      "distance": 0.0
-    },
-    {
-      "id": 2,
-      "name": "Westside Academy",
-      "address": "456 West St",
-      "latitude": 40.7130,
-      "longitude": -74.0070,
-      "distance": 0.2
-    }
-  ]
-  ```
+   <button onclick="copyToClipboard('[ { \"id\": 1, \"name\": \"Central High School\", \"address\": \"123 Main St\", \"latitude\": 40.7128, \"longitude\": -74.0060, \"distance\": 0.0 }, { \"id\": 2, \"name\": \"Westside Academy\", \"address\": \"456 West St\", \"latitude\": 40.7130, \"longitude\": -74.0070, \"distance\": 0.2 } ]')">Copy</button>
+   ```json
+   [
+     {
+       "id": 1,
+       "name": "Central High School",
+       "address": "123 Main St",
+       "latitude": 40.7128,
+       "longitude": -74.0060,
+       "distance": 0.0
+     },
+     {
+       "id": 2,
+       "name": "Westside Academy",
+       "address": "456 West St",
+       "latitude": 40.7130,
+       "longitude": -74.0070,
+       "distance": 0.2
+     }
+   ]
+   ```
 
 The response will include a list of schools sorted by their distance from the provided latitude and longitude. Each school entry will contain its ID, name, address, latitude, longitude, and the calculated distance from the user's location.
 
@@ -248,4 +261,22 @@ For any inquiries or issues, please contact the project maintainer at [your_emai
 ---
 
 Thank you for using the School Management API! We hope it helps you manage your school data efficiently. Happy coding!
+
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        alert('Copied to clipboard!');
+    }, function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+</script>
 ```
+
+### Explanation:
+- Each code block now has a button labeled "Copy" that, when clicked, will copy the corresponding code to the clipboard.
+- The `copyToClipboard` function uses the Clipboard API to copy the text.
+- An alert will notify the user that the text has been copied.
+
+### Note:
+This implementation will work in an HTML environment that supports JavaScript. If you're using a Markdown viewer that does not support HTML and JavaScript, this functionality will not work. You may need to use a web-based platform or a custom application to achieve this effect.
