@@ -70,7 +70,8 @@ Got it! Here’s the raw Markdown content for your README section:
 
 
 ---
-🔧 Environment Variables
+
+## 🔧 Environment Variables
 
 Create a .env file in your project root and add:
 
@@ -93,20 +94,19 @@ PORT=5000
 
 
 ---
+---
 
-🚦 API Endpoints
+## 🚦 API Endpoints
 
-➕ Add School
+### ➕ Add School
 
-Method: POST
+- **Method**: POST
+- **URL**: /addSchool
+- **Description**: Adds a new school to the database.
 
-URL: /addSchool
+**Request Body**:
 
-Description: Adds a new school to the database.
-
-
-Request Body:
-
+```json
 {
   "name": "School Name",
   "address": "School Address",
@@ -114,14 +114,16 @@ Request Body:
   "longitude": 98.76543
 }
 
-✅ Success Response:
 
+✅ Success Response:
+```json
 {
   "message": "School added successfully",
   "id": 1
 }
 
 ❌ Error Response (missing fields):
+```json
 
 {
   "message": "All fields are required."
