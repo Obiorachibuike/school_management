@@ -197,3 +197,65 @@ You can import these routes into Postman or create them manually.
 
 - **Method**: `GET`
 - **URL**: `http://localhost:5000/listSchools?latitude=40.7128&longitude=-74.0060`
+
+- **Expected Response**:
+  ```json
+  [
+    {
+      "id": 1,
+      "name": "Central High School",
+      "address": "123 Main St",
+      "latitude": 40.7128,
+      "longitude": -74.0060,
+      "distance": 0.0
+    },
+    {
+      "id": 2,
+      "name": "Westside Academy",
+      "address": "456 West St",
+      "latitude": 40.7130,
+      "longitude": -74.0070,
+      "distance": 0.2
+    }
+  ]
+  ```
+
+The response will include a list of schools sorted by their distance from the provided latitude and longitude. Each school entry will contain its ID, name, address, latitude, longitude, and the calculated distance from the user's location.
+
+  
+
+**📝 Contributing**
+
+Contributions are welcome! If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
+
+Please ensure that your code adheres to the project's coding standards and includes appropriate tests.
+
+  
+
+**📄 License**
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+  
+
+**📞 Contact**
+
+For any inquiries or issues, please contact the project maintainer at [your_email@example.com].
+
+  
+
+**🔗 Additional Resources**
+
+- [Express.js Documentation](https://expressjs.com/)
+- [MySQL Documentation](https://dev.mysql.com/doc/)
+- [Postman Documentation](https://learning.postman.com/docs/getting-started/introduction/)
+
+  
+
+Thank you for using the School Management API! We hope it helps you manage your school data efficiently. Happy coding!
