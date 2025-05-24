@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.send('School API is running');
 });
 
-// Ensure schools table exists (now async)
+// Ensure schools table exist (now async)
 (async () => {
   try {
     await createSchoolsTable();
