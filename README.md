@@ -1,5 +1,4 @@
 
-```markdown
 # 🏫 School Management API
 
 This is a simple Express.js-based API for managing schools using MySQL as the database. The API allows you to add new schools and retrieve a list of schools sorted by proximity to a given location.
