@@ -1,4 +1,3 @@
-Here is the full updated README with dashed separators for each section and a clickable table of contents:
 
 ```markdown
 # 🏫 School Management API
