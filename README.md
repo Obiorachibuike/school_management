@@ -91,7 +91,7 @@ DB_USER=root
 DB_PASSWORD=your_mysql_password  
 DB_NAME=school_management  
 PORT=5000
-
+;
    ### Variable Descriptions
 
 - 🏠 **DB_HOST**: Your MySQL host (usually `localhost`)
