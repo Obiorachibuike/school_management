@@ -39,8 +39,7 @@ This is a simple Express.js-based API for managing schools using MySQL as the da
 2. Install dependencies:
 
    ```bash
-
-npm install
+   npm install
 
 
 3. Set up a MySQL database named school_management (or modify the .env file for a different database name).
