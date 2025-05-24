@@ -131,8 +131,6 @@ Create a .env file in your project root and add:
 
 ---
 
-Sure! Here's the List Schools API documentation in Markdown format:
-
 ## List Schools
 
 **Method:** `GET`  
@@ -160,17 +158,17 @@ GET /listSchools?latitude=12.34567&longitude=98.76543
 
 ### Example Response
 
-```json
-[
-  {
-    "id": 1,
-    "name": "School Name",
-    "address": "School Address",
-    "latitude": 12.34567,
-    "longitude": 98.76543,
-    "distance": 0.0
-  }
-]
+      ```json
+       [
+        {
+         "id": 1,
+         "name": "School Name",
+         "address": "School Address",
+         "latitude": 12.34567,
+         "longitude": 98.76543,
+         "distance": 0.0
+         }
+        ]
 
 Let me know if you want to include authentication headers, error responses, or status codes too.
 
