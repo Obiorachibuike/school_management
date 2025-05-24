@@ -46,7 +46,7 @@ Got it! Here’s the raw Markdown content for your README section:
    git clone <repository_url>
    cd <project_folder>
 
-2. 📦 Install dependencies:
+2. **📦 Install dependencies:**
 
 npm install
 
