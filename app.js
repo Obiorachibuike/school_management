@@ -1,7 +1,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const createSchoolsTable = require('./createTable.js');
+const createSchoolsTable = require('./createTables.js');
 const schoolRoutes = require('./routes.js');
 
 require('dotenv').config();
