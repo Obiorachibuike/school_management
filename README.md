@@ -43,12 +43,14 @@ This is a simple Express.js-based API for managing schools using MySQL as the da
 ## 📦 Installation
 1. Clone the repository:
    ```bash
+   # Copy this command
    git clone <repository_url>
    cd <project_directory>
    ```
 
 2. Install dependencies:
    ```bash
+   # Copy this command
    npm install
    ```
 
@@ -56,6 +58,7 @@ This is a simple Express.js-based API for managing schools using MySQL as the da
 
 4. Create the required `schools` table in your MySQL database using the following query:
    ```sql
+   # Copy this command
    CREATE TABLE schools (
      id INT AUTO_INCREMENT PRIMARY KEY,
      name VARCHAR(255),
@@ -71,6 +74,7 @@ This is a simple Express.js-based API for managing schools using MySQL as the da
 Create a `.env` file in the root of the project with the following variables:
 
 ```
+# Copy this command
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_mysql_password
@@ -93,6 +97,7 @@ PORT=5000
 - **Description**: Adds a new school to the database.
 - **Request Body**:
   ```json
+  # Copy this command
   {
     "name": "School Name",
     "address": "School Address",
@@ -104,6 +109,7 @@ PORT=5000
 - **Response**:
   - ✅ **Success**:
     ```json
+    # Copy this command
     {
       "message": "School added successfully",
       "id": 1
@@ -112,6 +118,7 @@ PORT=5000
 
   - ❌ **Error** (if required fields are missing):
     ```json
+    # Copy this command
     {
       "message": "All fields are required."
     }
@@ -128,11 +135,13 @@ PORT=5000
 
 - **Example Request**: 
   ```
+  # Copy this command
   GET /listSchools?latitude=12.34567&longitude=98.76543
   ```
 
 - **Response**:
   ```json
+  # Copy this command
   [
     {
       "id": 1,
@@ -152,6 +161,7 @@ The list of schools is sorted by the distance from the provided latitude and lon
 ## ▶️ Running the Server
 1. After setting up the environment variables, start the server by running:
    ```bash
+   # Copy this command
    npm start
    ```
 
@@ -169,6 +179,7 @@ You can import these routes into Postman or create them manually.
 - **URL**: `http://localhost:5000/addSchool`
 - **Body**: (raw JSON)
   ```json
+  # Copy this command
   {
     "name": "Central High School",
     "address": "123 Main St",
@@ -179,6 +190,7 @@ You can import these routes into Postman or create them manually.
 
 - **Expected Response**:
   ```json
+  # Copy this command
   {
     "message": "School added successfully",
     "id": 1
@@ -193,6 +205,7 @@ You can import these routes into Postman or create them manually.
 
 - **Expected Response**:
   ```json
+  # Copy this command
   [
     {
       "id": 1,
@@ -250,4 +263,4 @@ For any inquiries or issues, please contact the project maintainer at [your_emai
 Thank you for using the School Management API! We hope it helps you manage your school data efficiently. Happy coding!
 ```
 
-This README is structured with dashed separators for clarity, and the table of contents links to the respective sections for easy navigation.
+In this updated README, each code block now includes a comment at the top left indicating "Copy this command" to prompt users to copy the code easily.
