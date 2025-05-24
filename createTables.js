@@ -1,24 +1,7 @@
-// createTables.js
-const mysql = require('mysql2');
-require('dotenv').config();
+// createTable.js
+const db = require('./db');
 
-// MySQL connection using environment variables
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-});
-
-// Connect to MySQL
-db.connect(err => {
-  if (err) {
-    console.error('Error connecting to MySQL:', err);
-    return;
-  }
-  console.log('Connected to MySQL database');
-
-  // Create the 'schools' table if it doesn't exist
+function createSchoolsTable() {
   const createTableQuery = `
     CREATE TABLE IF NOT EXISTS schools (
       id INT AUTO_INCREMENT PRIMARY KEY,
@@ -26,15 +9,16 @@ db.connect(err => {
       address VARCHAR(255) NOT NULL,
       latitude FLOAT NOT NULL,
       longitude FLOAT NOT NULL
-    );
+    )
   `;
 
-  db.query(createTableQuery, (err, result) => {
+  db.query(createTableQuery, (err) => {
     if (err) {
-      console.error('Error creating table:', err);
+      console.error('Error creating schools table:', err);
     } else {
-      console.log('Schools table is ready');
+      console.log('Schools table is ready.');
     }
-    db.end(); // Close the connection once done
   });
-});
+}
+
+module.exports = createSchoolsTable;
