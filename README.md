@@ -44,27 +44,27 @@ A simple Express.js API to manage schools using MySQL. Add new schools and get a
    git clone <repository_url>
    cd <project_folder>
 
-2. 📦 Install dependencies:
+2. **📦 Install dependencies:
    ```bash
    npm install
 
 
-3. 🗄️ Set up your MySQL database:
+3. **🗄️ Set up your MySQL database:
 
 Create a database named school_management (or change the name in .env):
+   ```sql
+   CREATE DATABASE school_management;
 
-CREATE DATABASE school_management;
 
-
-4. 🧱 Create the schools table:
-
-CREATE TABLE schools (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(255),
-  address VARCHAR(255),
-  latitude FLOAT,
-  longitude FLOAT
-);
+4. **🧱 Create the schools table:
+   ```sql
+   CREATE TABLE schools (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   name VARCHAR(255),
+   address VARCHAR(255),
+   latitude FLOAT,
+   longitude FLOAT
+   );
 
 
 
