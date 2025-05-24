@@ -15,10 +15,9 @@ async function createSchoolsTable() {
     await db.query(createTableQuery);
     console.log('Schools table ensured');
 
-    // Check if 'address' column exists
+    // Check if 'address' column exists, add if missing
     const [columns] = await db.query(`SHOW COLUMNS FROM schools LIKE 'address'`);
     if (columns.length === 0) {
-      // Add the 'address' column if it doesn't exist
       await db.query(`ALTER TABLE schools ADD COLUMN address VARCHAR(255)`);
       console.log('Address column added to schools table');
     }
