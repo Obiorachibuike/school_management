@@ -50,24 +50,23 @@ Got it! Here’s the raw Markdown content for your README section:
    ```bash
    npm install
 
+3. **🗄️ Set up your MySQL database:**
 
-3. 🗄️ Set up your MySQL database:
+   Create a database named school_management (or update the name in your .env file):
 
-Create a database named school_management (or update the name in your .env file):
+   ```sql
+   CREATE DATABASE school_management;
 
-CREATE DATABASE school_management;
+4. **🧱 Create the schools table:**
 
-
-4. 🧱 Create the schools table:
-
-CREATE TABLE schools (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(255),
-  address VARCHAR(255),
-  latitude FLOAT,
-  longitude FLOAT
-);
-
+   ```sql
+   CREATE TABLE schools (
+     id INT AUTO_INCREMENT PRIMARY KEY,
+     name VARCHAR(255),
+     address VARCHAR(255),
+     latitude FLOAT,
+     longitude FLOAT
+   );
 
 
 ---
