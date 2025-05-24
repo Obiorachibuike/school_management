@@ -2,8 +2,10 @@ const db = require('./db');
 
 async function createSchoolsTable() {
   try {
+    await db.query(`DROP TABLE IF EXISTS schools`);
+
     const query = `
-      CREATE TABLE IF NOT EXISTS schools (
+      CREATE TABLE schools (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         address VARCHAR(255),
@@ -13,9 +15,9 @@ async function createSchoolsTable() {
       )
     `;
     await db.query(query);
-    console.log('Schools table ensured');
+    console.log('Schools table dropped and recreated');
   } catch (error) {
-    console.error('Error creating schools table:', error);
+    console.error('Error recreating schools table:', error);
   }
 }
 
