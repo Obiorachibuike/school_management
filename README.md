@@ -47,8 +47,8 @@ Got it! Here’s the raw Markdown content for your README section:
    cd <project_folder>
 
 2. **📦 Install dependencies:**
-
-npm install
+   ```bash
+   npm install
 
 
 3. 🗄️ Set up your MySQL database:
