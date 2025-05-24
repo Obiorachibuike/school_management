@@ -1,55 +1,39 @@
 
----
-
-🏫 School Management API
+# 🏫 School Management API
 
 This is a simple Express.js-based API for managing schools using MySQL as the database. The API allows you to add new schools and retrieve a list of schools sorted by proximity to a given location.
 
-📋 Table of Contents
+## 📋 Table of Contents
 
-🚀 Features
+- [🚀 Features](#-features)
+- [🛠️ Prerequisites](#-prerequisites)
+- [📦 Installation](#-installation)
+- [🔧 Environment Variables](#-environment-variables)
+- [🔗 API Endpoints](#-api-endpoints)
+  - [➕ Add School API](#-add-school-api)
+  - [📍 List Schools API](#-list-schools-api)
+- [▶️ Running the Server](#-running-the-server)
+- [🧰 Postman Routes](#-postman-routes)
+- [🤝 Contributing](#-contributing)
 
-🛠️ Prerequisites
+## 🚀 Features
 
-📦 Installation
+- ➕ Add a new school to the database with name, address, latitude, and longitude.
+- 📍 Retrieve a list of schools sorted by proximity to a given user's location.
 
-🔧 Environment Variables
+## 🛠️ Prerequisites
 
-🔗 API Endpoints
+- 🔹 [Node.js](https://nodejs.org/) - JavaScript runtime.
+- 🔹 [MySQL](https://www.mysql.com/) - Relational database management system.
+- 🔹 [Postman](https://www.postman.com/) (optional) - API testing tool.
 
-➕ Add School API
-
-📍 List Schools API
-
-
-▶️ Running the Server
-
-🤝 Contributing
-
-
-🚀 Features
-
-➕ Add a new school to the database with name, address, latitude, and longitude.
-
-📍 Retrieve a list of schools sorted by proximity to a given user's location.
-
-
-🛠️ Prerequisites
-
-🔹 Node.js - JavaScript runtime.
-
-🔹 MySQL - Relational database management system.
-
-🔹 Postman (optional) - API testing tool.
-
-
-📦 Installation
+## 📦 Installation
 
 1. Clone this repository:
 
-git clone <repository_url>
-cd <project_directory>
-
+   ```bash
+   git clone <repository_url>
+   cd <project_directory>
 
 2. Install dependencies:
 
@@ -100,6 +84,7 @@ Endpoint: POST /addSchool
 
 Description: Adds a new school to the database.
 
+
 Request Body:
 
 {
@@ -130,6 +115,7 @@ Response:
 Endpoint: GET /listSchools
 
 Description: Retrieves a list of schools sorted by proximity to the user's location.
+
 
 Query Parameters:
 
@@ -171,14 +157,11 @@ npm start
 
 
 
-
----
-
 🧰 Postman Routes
 
 You can import these routes into Postman or create them manually.
 
-1. ➕ Add School
+➕ Add School
 
 Method: POST
 
@@ -196,30 +179,23 @@ Body: (raw JSON)
 
 Expected Response:
 
-
 {
   "message": "School added successfully",
   "id": 1
 }
 
-
----
-
-2. 📍 List Schools
+📍 List Schools
 
 Method: GET
 
 URL: http://localhost:5000/listSchools?latitude=40.7128&longitude=-74.0060
 
+
 Expected Response: JSON array of schools sorted by distance.
-
-
-
----
 
 🤝 Contributing
 
 If you'd like to contribute to this project, feel free to fork the repository, create a new branch, and submit a pull request.
 
+Let me know if you'd like it tweaked differently!
 
----
